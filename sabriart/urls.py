@@ -20,6 +20,8 @@ from sito import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.views.static import serve
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.HomePage, name='home'),
@@ -35,10 +37,24 @@ urlpatterns = [
 
 ]
 
+# see: https://docs.djangoproject.com/en/1.11/ref/views/
+# & https://www.cnblogs.com/virusswb/archive/2011/12/23/2299218.html
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    ]
+
+# if settings.DEBUG:
+#         urlpatterns += [
+#             #REMOVE IT in production phase
+#             url(r'^media/(?P<path>.*)$', django.views.static.serve,{'document_root': settings.MEDIA_ROOT}),
+#         ]
+
 # if settings.DEBUG:
 #         urlpatterns += patterns('',
 #                                 #REMOVE IT in production phase
 #                                 (r'^media/(?P<path>.*)$', 'django.views.static.serve',
 #                                 {'document_root': settings.MEDIA_ROOT})
 #           )
-

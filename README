@@ -1,3 +1,6 @@
+url_demo: http://www.sabriartbijoux.it/#
+github:
+
 python manage.py createsuperuser
     admin
     wen123456

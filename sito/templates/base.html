@@ -13,16 +13,22 @@
 
     <!-- share -->
     <script type="text/javascript">var switchTo5x=true;</script>
-    <script type="text/javascript" id="st_insights_js" src="http://w.sharethis.com/button/buttons.js?publisher=8268944a-900a-49af-a556-4374bbb32b03"></script>
+    <!-- <script type="text/javascript" id="st_insights_js" src="http://w.sharethis.com/button/buttons.js?publisher=8268944a-900a-49af-a556-4374bbb32b03"></script>-->
+    <script type="text/javascript" src="{% static 'others/1.min.js' %}"></script>
     <script type="text/javascript">stLight.options({publisher: "8268944a-900a-49af-a556-4374bbb32b03", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Marmelad' rel='stylesheet' type='text/css'>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+    <link rel='stylesheet' href="{% static 'others/font-awesome.min.css' %}" type='text/css' />
+    <!-- <link href='https://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>-->
+    <link rel='stylesheet' href="{% static 'others/nothing.css' %}" type='text/css' />
+    <!-- <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>-->
+    <link rel='stylesheet' href="{% static 'others/ubuntu.css' %}" type='text/css' />
+    <!-- <link href='https://fonts.googleapis.com/css?family=Marmelad' rel='stylesheet' type='text/css'>-->
+    <link rel='stylesheet' href="{% static 'others/mar.css' %}" type='text/css' />
 
     <!-- SLIDER REVOLUTION -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+    <script src="{% static 'others/jquery.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'rs-plugin/css/style.css' %}" media="screen" />
     <script type="text/javascript" src="{% static 'rs-plugin/js/jquery.themepunch.plugins.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>

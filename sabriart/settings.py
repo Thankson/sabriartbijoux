@@ -143,9 +143,11 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-MEDIA_ROOT = '/Users/pierangelo/Desktop/Django/sabriartbox/sabriart/media/'
+#MEDIA_ROOT = '/Users/pierangelo/Desktop/Django/sabriartbox/sabriart/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL = "http://127.0.0.1:8000/media/"
+#MEDIA_URL = "http://127.0.0.1:8000/media/"
+MEDIA_URL = "http://192.168.2.197:8002/media/"
 
 
 THUMBNAIL_PROCESSORS = (
