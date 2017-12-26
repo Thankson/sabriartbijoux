@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section id="slider">{% load staticfiles %}
+	<div class="tp-banner-container">
+          <div class="tp-banner" >
+            <ul>
+              <!-- SLIDE  -->
+              <li data-transition="fade" data-slotamount="5" data-masterspeed="700" >
+                <!-- MAIN IMAGE -->
+                <img src="{% static 'img/shop-foto-1.jpg' %}" alt="gallery 1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+              </li>
+              <!-- SLIDE  -->
+              <li data-transition="fade" data-slotamount="5" data-masterspeed="700" >
+                <!-- MAIN IMAGE -->
+                <img src="{% static 'img/shop-foto-2.jpg' %}" alt="gallery 1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+              </li>
+            </ul>
+
+          </div>
+      </div>
+              <script type="text/javascript">
+              var revapi;
+              jQuery(document).ready(function() {
+                   revapi = jQuery('.tp-banner').revolution(
+                  {
+                    delay:4000,
+                    startwidth:1170,
+                    startheight:500,
+                    hideThumbs:10,
+                    fullWidth:"on",
+                    forceFullWidth:"off"
+                  });
+              }); //ready
+            </script>
+</section>
+
+<div id="contatti" class="container">
+	<div class="col-xs-12">
+		<!--h2 class="text-center">
+			{% if session_language = 'eng' %}
+            	SHOP 
+            {% elif session_language = 'fra' %}
+                SHOP 
+            {% elif session_language = 'esp' %}
+            	SHOP
+            {% else %}
+           		SHOP
+            {% endif %}
+		</h2-->
+	</div>
+
+
+
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
+				<h4>
+					{% if session_language = 'eng' %}
+                        Purchases online 
+                    {% elif session_language = 'fra' %}
+                        Achats en ligne 
+                    {% elif session_language = 'esp' %}
+                        Adquisiciones online
+                    {% else %}
+                        Acquisti online
+                    {% endif %}
+				</h4>
+				
+				<p>
+					{% if session_language = 'eng' %}
+						If you are interested to purchase a Sabriart Bijoux and you want further information on the collections, on the costs and on the consignments, or for any other information it fills out here the form to side, or send me a direct email.
+                    
+                    {% elif session_language = 'fra' %}
+						Si tu es intéressé à acheter un Sabriart Bijoux et tu veux des informations sur les collections, sur les coûts et sur les envois ou pour n'importe quel autre renseignement remplit ici le formulaire au côté, ou envoie-moi une email direct.
+                    
+                    {% elif session_language = 'esp' %}
+						Si eres interesado en adquirir un Sabriart Bijoux y quieres mayores informaciones sobre las colecciones, sobre los costes y sobre los envíos, o por cualquiera otra información rellena aquí el impreso a lado, o bien me mandas un email directo. 
+                    
+                    {% else %}
+                        Se sei interessato ad acquistare un Sabriart Bijoux e vuoi maggiori informazioni sulle collezioni, sui costi e sulle spedizioni o per qualsiasi altra informazione compila il modulo qui a lato, oppure inviami una email diretta. 
+                    {% endif %}
+                    <br>
+                    <br>
+                    <br>
+				</p>
+
+
+				<h4>
+					{% if session_language = 'eng' %}
+                        You purchase direct  
+                    {% elif session_language = 'fra' %}
+                        Tu achètes direct 
+                    {% elif session_language = 'esp' %}
+                        Adquieres directos
+                    {% else %}
+                        Acquisti diretti
+                    {% endif %}
+				</h4>
+
+				<p>
+					{% if session_language = 'eng' %}
+						If you want to directly purchase a Sabriart Bijoux you can come to my stand in mine "mobile Tappe": (find them in the section <a href="{% url 'news-filter' 3 %}">"Events"</a> or follow the page Facebook).
+						If you have some difficulty to reach me, contact me and we can also find an alternative way to meet us.
+                    
+                    {% elif session_language = 'fra' %}
+						Si tu veux acheter un Sabriart Bijoux directement tu peux venir à mon stand dans mes "Étapes mobiles": (tu leur trouves dans la section <a href="{% url 'news-filter' 3 %}">"Événements"</a>, òu suivre la page Facebook).
+						Si il tu as des difficultès à me rejouindre,  contacte-moi et nous pouvons trouver une alternative de rencontre aussi.
+                    
+                    {% elif session_language = 'esp' %}
+						Si quieres adquirir directamente un Sabriart Bijoux puedes venir a mi caseta en mis "Etapas móviles": (las encuentras en la sección <a href="{% url 'news-filter' 3 %}">"Eventos"</a> o bien puedes seguir la página Facebook).<br>
+						¿No te es posible alcanzarme? contáctame y también podemos encontrar una alternativa de cita.
+                    
+                    {% else %}
+                        Se vuoi acquistare direttamente un Sabriart Bijoux puoi venire al mio stand nelle mie "Tappe mobili": (le trovi nella sezione <a href="{% url 'news-filter' 3 %}">"Eventi"</a> oppure puoi seguire la pagina Facebook).<br>
+                        Non ti è possibile raggiungermi? contattami e possiamo anche trovare un'alternativa di ritrovo. 
+                    {% endif %}
+                    <br>
+				</p>
+
+				<p>
+					<a href="mailto:info@sabriartbijoux.it">
+						<i class="fa fa-envelope" aria-hidden="true"></i> info@sabriartbijoux.it<br>
+					</a>
+						<i class="fa fa-phone-square" aria-hidden="true"></i> +39 347.4344112
+						<br>
+				</p>
+
+				<p>
+					<a href="https://www.facebook.com/sabriart.bijoux" target="_Blank">
+						<i class="fa fa-facebook-square fa-2x" aria-hidden="true">&nbsp;&nbsp;</i>
+					</a>
+					<a href="https://it.pinterest.com/sabriartbijoux/" target="_Blank">
+						<i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i>
+					</a>
+					<br>
+				</p>
+
+				<p>
+					{% if session_language = 'eng' %}
+                        <span style="font-size: 16px; font-weight:800;">Where you find me</span><br>
+                        Milan, ITALY
+                    {% elif session_language = 'fra' %}
+                        <span style="font-size: 16px; font-weight:800;">Où tu me trouves</span><br>
+                        Milan, ITALIE
+                    {% elif session_language = 'esp' %}
+                        <span style="font-size: 16px; font-weight:800;">Dónde me encuentras</span><vr>
+                        Milán, ITALIA
+                    {% else %}
+                        <span style="font-size: 16px; font-weight:800;">Dove mi trovi</span><br>
+                        Milano, ITALIA
+                    {% endif %}
+                    <br>
+                    <br>
+				</p>
+
+
+
+				<h4>
+					{% if session_language = 'eng' %}
+                        Shops  
+                    {% elif session_language = 'fra' %}
+                        Magasin 
+                    {% elif session_language = 'esp' %}
+                        Tienda
+                    {% else %}
+                        Negozi
+                    {% endif %}
+				</h4>
+				<p>
+					Little Door BCN<br>
+					Negozio di arte, design & moda sostenibile. <br>
+					Carrer de Còrsega, 256<br>
+					08008 Barcellona<br>
+					Tel. +34 608 33 32 31<br>
+					<a href="http://www.littledoorbcn.es/" target="_Blank">http://www.littledoorbcn.es/</a></br>
+					<a href="https://www.facebook.com/LittleDoorBcn/" target="_Blank">https://www.facebook.com/LittleDoorBcn/</a><br>
+				</p>
+				
+
+
+				<p>
+					<br>
+					<strong>
+					<span style="font-weight: bold">
+					{% if session_language = 'eng' %}
+                        f you are interested to distribute the collection "Sabriart Bijoux", send me an email of the presentation of your shop to <a href="mailtoinfo@sabriartbijoux.it">info@sabriartbijoux.it</a>, I will recontact you personally.
+                    
+                    {% elif session_language = 'fra' %}
+                        Si vous êtes intéressès a distribuire les créations de la collection "Sabriart Bijoux". Envoyez moi une email de prèsentation de votre boutique à <a href="mailtoinfo@sabriartbijoux.it">info@sabriartbijoux.it</a>, je vous rèpondrai personnellement. 
+                    
+                    {% elif session_language = 'esp' %}
+                        ¿Eres interesado en Sabriart Bijoux distribuir los productos? Manda un email de presentación de tu tienda a <a href="mailtoinfo@sabriartbijoux.it">info@sabriartbijoux.it</a> vendrás personalmente ricontattato.
+                    
+                    {% else %}
+                        Sei interessato a distribuire i prodotti Sabriart Bijoux? Invia un'email di presentazione del tuo negozio a <a href="mailto:info@sabriartbijoux.it">info@sabriartbijoux.it</a> verrai ricontattato personalmente.
+                    {% endif %}
+                	</span>
+					</strong>
+				</p>
+
+
+	</div>
+
+
+
+	<div class="col-xs-12 col-sm-6">
+
+
+
+						<form id="contactForm" class="white-row" action="/contact/" method="post">{% csrf_token %}
+							<div class="row">
+								<div class="form-group">
+									<div class="col-sm-6 col-md-6">
+										<label>Nome:</label>
+										<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="nome" id="contact_name" required>
+									</div>
+									
+									<div class="col-sm-6 col-md-6">
+										<label>E-mail *</label>
+										<input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="contact_email" required>
+									</div>
+			
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-12">
+										<label>Oggetto:</label>
+										<input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="oggetto" id="contact_subject">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-12">
+										<label>Messaggio *</label>
+										<textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="messaggio" id="contact_message"></textarea>
+									</div>
+								</div>
+								<div class="">
+									<input type="checkbox" style="margin-left:15px"> &nbsp;&nbsp;Autorizzo il trattamento dei dati personali nel rispetto delle leggi sulla privacy L. 675/96
+								</div>
+							</div>
+
+							<br>
+
+							<div class="row">
+								<div class="col-md-12">
+									<input id="contact_submit" type="submit" value="INVIA" class="btn btn-primary btn-md" data-loading-text="Loading...">
+								</div>
+							</div>
+						</form>
+
+
+
+	</div>
+
+
+
+
+	
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,120 @@
+<section id="news">
+
+	<h1>NEWS - EVENTI</h1>
+	<div class="container">
+		
+		<div class="row">
+
+			{% for news in news_list %}
+			<div class="col-xs-12 col-sm-3">
+				<a href="#">{% load cropping %}
+					<a href="" data-target="#myModal{{news.id}}" data-toggle="modal" data-target="#myModal{{news.id}}">
+						<img src="{% cropped_thumbnail news "thumb" %}" class="img-responsive">
+					</a>
+				</a>
+				<h3>
+          {% if session_language = 'eng' %}
+              {{news.titolo_uk|safe}}
+          {% elif session_language = 'fra' %}
+              {{news.titolo_fra|safe}}
+          {% elif session_language = 'esp' %}
+              {{news.titolo_esp|safe}}
+          {% else %}
+              {{news.titolo|safe}}
+          {% endif %}
+          
+        </h3>
+				<h5>
+            		{% if news.inizio %}Dal: {{news.inizio|date:"SHORT_DATE_FORMAT"}}{% else %}&nbsp;{% endif %} 
+            		{% if news.fine %}Al: {{news.fine|date:"SHORT_DATE_FORMAT"}}{% else %}&nbsp;{% endif %}
+        </h5>
+				<p>
+          {% if session_language = 'eng' %}
+              {{news.descrizione_uk|safe|truncatechars:140}}
+          {% elif session_language = 'fra' %}
+              {{news.descrizione_fra|safe|truncatechars:140}}
+          {% elif session_language = 'esp' %}
+              {{news.descrizione_esp|safe|truncatechars:140}}
+          {% else %}
+              {{news.descrizione|safe|truncatechars:140}}
+          {% endif %}
+        </p>
+			</div>
+			{% endfor %}
+
+		</div><!-- row -->
+	</div><!-- container -->
+
+</section>
+
+
+
+
+<!-- Modal -->
+{% for news in news_list %}
+<div class="modal fade " id="myModal{{news.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{news.titolo|safe}}</h4>
+        <h5>
+            {% if news.inizio %}Dal: {{news.inizio|date:"SHORT_DATE_FORMAT"}}{% else %}&nbsp;{% endif %} 
+            {% if news.fine %}Al: {{news.fine|date:"SHORT_DATE_FORMAT"}}{% else %}&nbsp;{% endif %}
+        </h5>
+      </div>
+      <div class="modal-body" style="padding-top:20px;">
+      	<div class="col-xs-12 col-sm-4">
+      		<br>
+      		<img src="/media/{{news.image}}" class="img-responsive">
+      	</div>
+      	<div class="col-xs-12 col-sm-8">
+      		<br>
+        	<p>
+            {% if session_language = 'eng' %}
+                        {{news.descrizione_uk|safe}}
+            {% elif session_language = 'fra' %}
+                        {{news.descrizione_fra|safe}}
+            {% elif session_language = 'esp' %}
+                        {{news.descrizione_esp|safe}}
+            {% else %}
+                        {{news.descrizione|safe}}
+            {% endif %}
+          </p>
+        	{% if news.link %}
+            <p>
+                <a href="{{news.link}}" target="_Blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i> Vedi Link
+                </a>
+            </p>
+            <br>
+            {% endif %}
+            {% if news.allegato %}
+            <p>
+                <a href="/media/{{news.allegato}}" target="_Blank">
+                    <i class="fa fa-file-text" aria-hidden="true"></i> Vedi allegato
+                </a>
+            </p>
+            {% endif %}
+        	<h5>
+        		<br>
+        		<br>
+                Share:
+                <span class='st_facebook' displayText=''></span>
+                <span class='st_twitter' displayText=''></span>
+                <span class='st_pinterest' displayText=''></span>
+                <span class='st_whatsapp' displayText=''></span>
+                <span class='st_email' displayText=''></span>
+            </h5>
+    	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+

@@ -1,0 +1,563 @@
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+a,
+a:link,
+a:hover,
+a:focus {
+  color: #562c80;
+  text-decoration: none;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+.logo {
+	margin-top:-40px;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: none;
+    border-width: 0px;
+    z-index:999;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #777;
+    margin-top:30px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 0px 0px 30px;
+}
+.lingua {
+	float: right;
+}
+.lingua li {
+	display: inline;
+	list-style: none;
+	padding-left:5px;
+	padding-right:5px;
+	border-right-width: 1px;
+	border-right-color: #999999;
+	border-right-style: solid;
+}
+#slider .tp-banner-container {
+	margin-top: 50px;
+}
+
+
+#quadrati {
+	margin-top:50px;
+  margin-bottom:0px;
+	background-color: #745DA3;
+	padding-top:30px;
+	padding-bottom:30px;
+}
+
+#quadrati .quadro {
+	color:#ffffff;
+	border-width: 1px;
+	border-color: #fff;
+	border-style: solid;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom:30px;
+}
+
+#quadrati .fa {
+	text-align:center;
+	font-size: 65px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*#gioielli .container {
+  width: 100%; height: 100%; top: 0; left: 0;
+  background-image: ulr('http://www.sabriartbijoux.it/media/pagine/bicchiere.jpg')
+  no-repeat center top; position: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
+#gioielli {
+    background-color: #ffffff;
+}
+
+#gioielli .spanband {
+	color: #745DA3;
+	border-color: #745DA3;
+	border-width: 2px;
+	border-style: solid;
+	padding:10px;
+	width:auto;
+	margin-top: 40px;
+	margin-bottom:30px;
+	font-size: 34px;
+	font-family: 'Marmelad', sans-serif;
+
+}
+
+
+#gioielli p {
+	text-align: justify;
+}
+
+
+#designer {
+	background-color: #000000;
+}
+
+#designer p {
+	text-align: justify;
+	color: #ffffff;
+}
+
+#designer .spanband {
+	color: #fff;
+	border-color: #fff;
+	border-width: 2px;
+	border-style: solid;
+	padding:10px;
+	width:auto;
+	margin-top: 30px;
+	margin-bottom:30px;
+	font-size: 34px;
+	font-family: 'Marmelad', sans-serif;
+}
+
+#slogan {
+	background-color: #745DA3;
+	color: #ffffff;
+}
+
+#slogan h1 {
+	font-family: 'Nothing You Could Do', cursive;
+	padding-top:30px;
+	padding-bottom:30px;
+	color: #ffffff;
+	text-align: center;
+}
+
+#contatti {
+  margin-top:20px;
+	padding-top:0px;
+	padding-bottom:30px;
+}
+
+#contatti .spanband {
+	color: #745DA3;
+	border-color: #745DA3;
+	border-width: 2px;
+	border-style: solid;
+	padding:10px;
+	width:auto;
+	margin-top: 30px;
+	margin-bottom:30px;
+	font-size: 34px;
+	text-align:center;
+	position:relative;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+#contatti input,
+#contatti textarea {
+	background-color: #F4F5F6;
+	color: #999999;
+  width: 100%;
+}
+
+#contatti h3 {
+	background-color: #666666;
+	color: #ffffff;
+	padding:10px;
+	text-align: center;
+}
+
+.contact_submit {
+    background-color: #666666;
+    color: #ffffff;
+    padding:10px;
+    text-align: center;
+}
+
+#news {
+	background-color: #fff;
+	min-height: auto;
+}
+
+#news h1 {
+	text-align: center;
+	font-family: 'Marmelad', sans-serif;
+}
+#news h3 {
+	font-family: 'Ubuntu', sans-serif;
+}
+#news p {
+	font-family: 'Ubuntu', sans-serif;
+  font-size: 10pt;
+  text-align: justify;
+}
+
+.news-news {
+  min-height: 420px;
+}
+
+#partner {
+  background-color: #cccccc;
+  padding-top: 10px;
+  margin-bottom:20px;
+}
+
+
+#notizie ul li {
+	min-height: 500px;
+}
+#product {
+	background-color:#fff;
+}
+.flexslider {
+	background-color: none;
+	margin-bottom:0px;
+}
+
+[class*="span"]{float:left;min-height:1px;margin-left:0px;}
+
+
+/* ----- FOOTER ------- */
+footer {
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color: #000000;
+}
+
+
+
+
+
+#product {
+	margin-top:0px;
+}
+
+
+
+
+
+/* ----- effetto hover img ----- */
+
+.view {
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    float: left;
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: default;
+    background: #fff url(../images/bgimg.jpg) no-repeat center center
+}
+.view .mask, .view .content {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+}
+.view img {
+    display: block;
+    position: relative
+}
+.view h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px 0 0 0
+}
+.view p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px 20px;
+    text-align: center
+}
+.view a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px #000
+}
+.view a.info:hover {
+    box-shadow: 0 0 5px #000
+}
+
+
+
+.view-tenth img {
+   -webkit-transform: scaleY(1);
+   -moz-transform: scaleY(1);
+   -o-transform: scaleY(1);
+   -ms-transform: scaleY(1);
+   transform: scaleY(1);
+   -webkit-transition: all 0.7s ease-in-out;
+   -moz-transition: all 0.7s ease-in-out;
+   -o-transition: all 0.7s ease-in-out;
+   -ms-transition: all 0.7s ease-in-out;
+   transition: all 0.7s ease-in-out;
+}
+.view-tenth .mask {
+   background-color: rgba(255, 231, 179, 0.3);
+   -webkit-transition: all 0.5s linear;
+   -moz-transition: all 0.5s linear;
+   -o-transition: all 0.5s linear;
+   -ms-transition: all 0.5s linear;
+   transition: all 0.5s linear;
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+}
+.view-tenth h2 {
+   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+   background: transparent;
+   margin: 20px 40px 0px 40px;
+   -webkit-transform: scale(0);
+   -moz-transform: scale(0);
+   -o-transform: scale(0);
+   -ms-transform: scale(0);
+   transform: scale(0);
+   color: #333;
+   -webkit-transition: all 0.5s linear;
+   -moz-transition: all 0.5s linear;
+   -o-transition: all 0.5s linear;
+   -ms-transition: all 0.5s linear;
+   transition: all 0.5s linear;
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+}
+.view-tenth p {
+   color: #333;
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transform: scale(0);
+   -moz-transform: scale(0);
+   -o-transform: scale(0);
+   -ms-transform: scale(0);
+   transform: scale(0);
+   -webkit-transition: all 0.5s linear;
+   -moz-transition: all 0.5s linear;
+   -o-transition: all 0.5s linear;
+   -ms-transition: all 0.5s linear;
+   transition: all 0.5s linear;
+}
+.view-tenth a.info {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transform: scale(0);
+   -moz-transform: scale(0);
+   -o-transform: scale(0);
+   -ms-transform: scale(0);
+   transform: scale(0);
+   -webkit-transition: all 0.5s linear;
+   -moz-transition: all 0.5s linear;
+   -o-transition: all 0.5s linear;
+   -ms-transition: all 0.5s linear;
+   transition: all 0.5s linear;
+}
+.view-tenth:hover img {
+   -webkit-transform: scale(10);
+   -moz-transform: scale(10);
+   -o-transform: scale(10);
+   -ms-transform: scale(10);
+   transform: scale(10);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+}
+.view-tenth:hover .mask {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+}
+.view-tenth:hover h2,.view-tenth:hover p,.view-tenth:hover a.info {
+   -webkit-transform: scale(1);
+   -moz-transform: scale(1);
+   -o-transform: scale(1);
+   -ms-transform: scale(1);
+   transform: scale(1);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+}
+
+
+.view {
+	margin-left: 0; margin-right:20px;
+}		
+
+
+
+
+
+
+/* --- PRODUCT --- */
+#main-wrap{
+  position:relative;
+  z-index:3;
+  width: 100%;
+  margin:0 auto;
+  overflow:hidden;
+  left:0;
+  top:0;
+  padding-left:0px;
+}
+
+.filter-floating.filter-floating-fixed {
+    position: none;
+    z-index: 999;
+}
+
+
+#dettaglio {
+  margin-bottom: 30px;
+}
+#dettaglio .container {
+	margin-top:60px;
+}
+
+#dettaglio .fa-2x {
+  font-size: 18pt;
+}
+
+#menu-categorie ul {
+  margin-top: 30px;
+}
+
+#menu-categorie ul li {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: right;
+  border-left-width: 1px;
+  border-left-color: #23527c;
+  border-left-style: solid;
+}
+
+
+
+footer p {
+  color:#ffffff;
+  text-align: center;
+}
+
+
+
+
+
+/* ------ SMARTPHONE ------- */
+@media (max-width:480px) {
+
+  #quadrati .quadro {
+    margin-bottom: 30px;
+  }
+
+  #slogan h1 {
+    font-size: 20pt;
+  }
+
+  #menu-categorie ul li {
+    display: inline;
+    float: left;
+    margin-bottom:10px;
+  }
+
+  .news-news {min-height: auto;}
+}
+
+.ug-textpanel-title {
+  font-family: 'Marmelad', sans-serif;
+}
+
+.ug-textpanel-title h2 {
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size:17pt;
+  padding-bottom:0px;
+  margin-bottom: 0px;
+}
+.ug-textpanel-title h3 {
+  font-weight: 200;
+  font-size:15pt;
+  margin-top:0px;
+  padding-top:0px;
+}
+
+
+
+.social-links {
+  position: relative;
+  margin: 0 auto;
+  padding-left:20px;
+}
+
+.social-links a{
+  text-align:center;
+  float: left;
+  width: 36px;
+  height: 36px;
+  /*border: 2px solid #ffffff;*/
+  border: 0px solid #ffffff;
+  border-radius: 100%;
+  margin-right: 7px; /*space between*/
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+} 
+.social-links a i{
+  font-size: 30px;
+    align-self:center;
+  color: #ffffff;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    margin: 0 auto;
+}
+.social-links a i::before{
+  display:inline-block;
+  text-decoration:none;
+}
+.social-links a:hover{
+  background: rgba(0,0,0,0.2);
+}
+.social-links a:hover i{
+  color:#fff;
+}
+
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}

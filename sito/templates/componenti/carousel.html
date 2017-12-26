@@ -1,0 +1,19 @@
+
+<section id="product">
+	
+	<div style="width:98%; position:relative; margin: 0 auto;">
+		<div class="flexslider">
+	  		<ul class="slides">
+			{% for pro in post_list %}
+			{% if pro.carousel_home%}
+	    	<li>
+	    		<a href="/product">
+					<img src="/media/{{pro.carousel_home}}" class="img-responsive">
+				</a>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+	
+</section>

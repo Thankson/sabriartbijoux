@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    
+    {% load staticfiles %}
+
+
+    {% include 'componenti/slider.html' %}
+    
+    {% include 'componenti/quadrati.html' %}
+
+    <div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'img/sfondi/sfondo1.jpg' %}" data-natural-width="1920" data-natural-height="1200" data-bleed="10" data-speed="0.2">
+        <br>
+    </div>
+
+
+    {% include 'componenti/gioielli.html' %}
+    
+    <div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'img/sfondi/sfondo2.jpg' %}" data-natural-width="1400" data-natural-height="1080" data-bleed="10" data-speed="0.2">
+        <br>
+    </div>
+
+    {% include 'componenti/carousel.html' %}
+
+    {% include 'componenti/biografia.html' %}
+
+
+    
+    <!-- div class="parallax-window" data-parallax="scroll" data-image-src="img/slider-1.jpg" style="height: 400px;">
+        <br>
+    </div-->
+
+
+    {% include 'componenti/slogan.html' %}
+
+
+    {% include 'componenti/news.html' %}
+    
+    <footer>
+        <div class="container">
+            
+        </div>
+    </footer>
+    
+
+
+
+
+{% endblock %}

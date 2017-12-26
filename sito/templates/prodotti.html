@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container" style="margin-top: 60px">
+    <div class="col-xs-12 col-sm-4" style="margin-top:15px;">
+        <h1 style="font-size:14pt;">PORTFOLIO</h1>
+    </div>
+    <div id="menu-categorie" class="col-xs-12 col-sm-8" style="margin-bottom:15px;">
+        <ul>
+            {% for cat in categorie_list %}
+            <li>
+                <a href="{% url 'product-filter' cat.id %}">
+                    {% if session_language = 'eng' %}
+                        {{cat.titolo_uk}}
+                    {% elif session_language = 'fra' %}
+                        {{cat.titolo_fra}}
+                    {% elif session_language = 'esp' %}
+                        {{cat.titolo_esp}}
+                    {% else %}
+                        {{cat.titolo}}
+                    {% endif %}
+                </a>
+            </li>
+            {% endfor %}
+            <li><a href="{% url 'product' %}">All</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container" style="margin-top:15px; margin-bottom:100px;">
+
+    {% if session_language = 'eng' %}
+        <div id="gallery-list" style="display:none;">
+        {% for post in post_list %}
+        {% if post.image %}
+        <a href="{% url 'dettaglio' post.id %}">{% load cropping %}
+        <img alt="<h2>{{post.titolo_uk}}</h2><br><h3>{{post.categoria.titolo_uk}}</h3>"
+             src="{% cropped_thumbnail post "croplibero" %}"
+             data-image="{% cropped_thumbnail post "croplibero" %}"
+             data-description="{{post.titolo_uk}} | {{post.categoria.titolo_uk}}"
+             style="display:none">
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+
+    {% elif session_language = 'fra' %}
+        <div id="gallery-list" style="display:none;">
+        {% for post in post_list %}
+        {% if post.image %}
+        <a href="{% url 'dettaglio' post.id %}">{% load cropping %}
+        <img alt="<h2>{{post.titolo_fra}}</h2><br><h3>{{post.categoria.titolo_fra}}</h3>"
+             src="{% cropped_thumbnail post "croplibero" %}"
+             data-image="{% cropped_thumbnail post "croplibero" %}"
+             data-description="{{post.titolo_fra}} | {{post.categoria.titolo_fra}}"
+             style="display:none">
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+
+    {% elif session_language = 'esp' %}
+        <div id="gallery-list" style="display:none;">
+        {% for post in post_list %}
+        {% if post.image %}
+        <a href="{% url 'dettaglio' post.id %}">{% load cropping %}
+        <img alt="<h2>{{post.titolo_esp}}</h2><br><h3>{{post.categoria.titolo_esp}}</h3>"
+             src="{% cropped_thumbnail post "croplibero" %}"
+             data-image="{% cropped_thumbnail post "croplibero" %}"
+             data-description="{{post.titolo_esp}} | {{post.categoria.titolo_esp}}"
+             style="display:none">
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    {% else %}
+        <div id="gallery-list" style="display:none;">
+        {% for post in post_list %}
+        {% if post.image %}
+        <a href="{% url 'dettaglio' post.id %}">{% load cropping %}
+        <img alt="<h2>{{post.titolo}}</h2><br><h3>{{post.categoria.titolo}}</h3>"
+             src="{% cropped_thumbnail post "croplibero" %}"
+             data-image="{% cropped_thumbnail post "croplibero" %}"
+             data-description="{{post.titolo}} | {{post.categoria.titolo}}"
+             style="display:none">
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+
+
+    <div id="gallery-list" style="display:none;">
+        {% for post in post_list %}
+        {% if post.image %}
+        <a href="{% url 'dettaglio' post.id %}">{% load cropping %}
+        <img alt="<h2>{{post.titolo}}</h2><br><h3>{{post.categoria.titolo}}</h3>"
+             src="{% cropped_thumbnail post "croplibero" %}"
+             data-image="{% cropped_thumbnail post "croplibero" %}"
+             data-description="{{post.titolo}} | {{post.categoria.titolo}}"
+             style="display:none">
+        </a>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+
+    <script type="text/javascript">
+    
+            jQuery(document).ready(function(){
+    
+                jQuery("#gallery-list").unitegallery({
+                    tiles_type:"nested",
+                    tiles_nested_optimal_tile_width:350,
+                    tile_border_color:"#7a7a7a",
+                    tile_outline_color:"#8B8B8B",
+                    tile_enable_shadow:false,
+                    tile_shadow_color:"#8B8B8B",
+                    tile_overlay_opacity:0.3,
+                    tile_show_link_icon:true,
+                    tile_image_effect_type:"sepia",
+                    tile_image_effect_reverse:true,
+                    tile_enable_textpanel:true,
+                    lightbox_textpanel_title_color:"e5e5e5",
+                });
+    
+            });
+            
+        </script>
+
+
+</div>
+			
+{% endblock %}

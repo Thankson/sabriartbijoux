@@ -1,0 +1,7 @@
+Messaggio inviato dal Sito Internet SabriartBijoux
+
+Nome: {{post.nome}}
+Email: {{post.email}}
+Oggetto: {{post.oggetto}}
+Messaggio:
+{{post.messaggio}}

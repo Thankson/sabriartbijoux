@@ -1,0 +1,7 @@
+# first line must not contain any rules
+media/*
+static/img/*
+static/uploads/*
+!.gitignore
+.idea/
+*.py[co]

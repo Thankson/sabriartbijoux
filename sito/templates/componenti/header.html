@@ -1,0 +1,65 @@
+<div class="container">{% load staticfiles %}
+<nav class="navbar navbar-default">
+	<div class="container">
+		  <ul class="lingua">
+		  	<li><a href="/language/ita">IT</a></li>
+		  	<li><a href="/language/eng">EN</a></li>
+		  	<li><a href="/language/esp">ES</a></li>
+		  	<li><a href="/language/fra">FR</a></li>
+		  </ul>
+	</div>
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/#"><img src="{% static 'img/logo.png' %}" class="img-responsive logo"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!--li><a href="#">Link</a></li-->
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        {% if session_language = 'eng' %}
+        <li><a href="/#">HOME</a></li>
+        <li><a href="/#designer">ABOUT</a></li>
+        <li><a href="/product">PORTFOLIO</a></li>
+        <li><a href="{% url 'news' %}">EVENTS</a></li>
+        <li><a href="{% url 'shop' %}">SHOP</a></li>
+        <li><a href="{% url 'contact' %}">CONTACTS</a></li>
+        {% elif session_language = 'fra' %}
+        <li><a href="/#">HOME</a></li>
+        <li><a href="/#designer">ABOUT</a></li>
+        <li><a href="/product">PORTFOLIO</a></li>
+        <li><a href="{% url 'news' %}">ÉVÉNEMENTS</a></li>
+        <li><a href="{% url 'shop' %}">SHOP</a></li>
+        <li><a href="{% url 'contact' %}">CONTACTS</a></li>
+        {% elif session_language = 'esp' %}
+        <li><a href="/#">HOME</a></li>
+        <li><a href="/#designer">ABOUT</a></li>
+        <li><a href="/product">PORTFOLIO</a></li>
+        <li><a href="{% url 'news' %}">EVENTOS</a></li>
+        <li><a href="{% url 'shop' %}">SHOP</a></li>
+        <li><a href="{% url 'contact' %}">CONTACTOS</a></li>
+        {% else %}
+        <li><a href="/#">HOME</a></li>
+        <li><a href="/#designer">ABOUT</a></li>
+        <li><a href="/product">PORTFOLIO</a></li>
+        <li><a href="{% url 'news' %}">EVENTI</a></li>
+        <li><a href="{% url 'shop' %}">SHOP</a></li>
+        <li><a href="{% url 'contact' %}">CONTATTI</a></li>
+        {% endif %}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</div>
+

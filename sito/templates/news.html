@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container" style="margin-top: 60px">
+    <div class="col-xs-12 col-sm-4" style="margin-top:15px;">
+        <h1 style="font-size:14pt;">
+            {% if session_language = 'eng' %}
+                        EVENTS{% if categoria %} | {{categoria.titolo_uk}}{% endif %}
+                    {% elif session_language = 'fra' %}
+                        ÉVÉNEMENTS{% if categoria %} | {{categoria.titolo_fra}}{% endif %}
+                    {% elif session_language = 'esp' %}
+                        EVENTOS{% if categoria %} | {{categoria.titolo_esp}}{% endif %}
+                    {% else %}
+                        EVENTI{% if categoria %} | {{categoria.titolo}}{% endif %}
+                    {% endif %}
+        </h1>
+    </div>
+    <div id="menu-categorie" class="col-xs-12 col-sm-8" style="margin-bottom:15px;">
+        <ul>
+            {% for cat in tipologie_list %}
+            <li>
+                <a href="{% url 'news-filter' cat.id %}">
+                    {% if session_language = 'eng' %}
+                        {{cat.titolo_uk}}
+                    {% elif session_language = 'fra' %}
+                        {{cat.titolo_fra}}
+                    {% elif session_language = 'esp' %}
+                        {{cat.titolo_esp}}
+                    {% else %}
+                        {{cat.titolo}}
+                    {% endif %}
+                </a>
+            </li>
+            {% endfor %}
+            <li><a href="{% url 'news' %}">All</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container" style="margin-top:15px; margin-bottom:100px;">
+
+        {% for news in news_list %}
+            <div class="col-xs-12 col-sm-3 news-news" style="margin-bottom:30px;">
+                <a href="#">{% load cropping %}
+                    <a href="" data-target="#myModal{{news.id}}" data-toggle="modal" data-target="#myModal{{news.id}}">
+                        <img src="{% cropped_thumbnail news "thumb" %}" class="img-responsive">
+                    </a>
+                </a>
+                <h3><strong>
+                    {% if session_language = 'eng' %}
+                        {{news.titolo_uk|safe}}{% if news.titolo_uk|length <= 22 %}</br>&nbsp;{% endif %}
+                    {% elif session_language = 'fra' %}
+                        {{news.titolo_fra|safe}}{% if news.titolo_fra|length <= 22 %}</br>&nbsp;{% endif %}
+                    {% elif session_language = 'esp' %}
+                        {{news.titolo_esp|safe}}{% if news.titolo_esp|length <= 22 %}</br>&nbsp;{% endif %}
+                    {% else %}
+                        {{news.titolo|safe}}{% if news.titolo|length <= 22 %}</br>&nbsp;{% endif %}
+                    {% endif %}
+                </strong></h3>
+                <h5>
+                    {% if news.inizio %}Dal: {{news.inizio|date:"SHORT_DATE_FORMAT"}}{% else %}&nbsp;{% endif %} 
+                    {% if news.fine %}Al: {{news.fine|date:"SHORT_DATE_FORMAT"}}{% else %}&nbsp;{% endif %}
+                </h5>
+                <p>
+                    {% if session_language = 'eng' %}
+                        {{news.descrizione_uk|safe|truncatechars:140}}
+                    {% elif session_language = 'fra' %}
+                        {{news.descrizione_fra|safe|truncatechars:140}}
+                    {% elif session_language = 'esp' %}
+                        {{news.descrizione_esp|safe|truncatechars:140}}
+                    {% else %}
+                        {{news.descrizione|safe|truncatechars:140}}
+                    {% endif %}
+                    
+                </p>
+            </div>
+            {% endfor %}
+
+</div>
+
+<!-- Modal -->
+{% for news in news_list %}
+<div class="modal fade " id="myModal{{news.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{news.titolo|safe}}</h4>
+        <h5>
+            {% if news.inizio %}Dal: {{news.inizio|date:"SHORT_DATE_FORMAT"}}{% else %}&nbsp;{% endif %} 
+            {% if news.fine %}Al: {{news.fine|date:"SHORT_DATE_FORMAT"}}{% else %}&nbsp;{% endif %}
+        </h5>
+      </div>
+      <div class="modal-body" style="padding-top:20px;">
+        <div class="col-xs-12 col-sm-4">
+            <br>
+            <img src="/media/{{news.image}}" class="img-responsive">
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <br>
+            <p>
+                {% if session_language = 'eng' %}
+                        {{news.descrizione_uk|safe}}
+                {% elif session_language = 'fra' %}
+                        {{news.descrizione_fra|safe}}
+                {% elif session_language = 'esp' %}
+                        {{news.descrizione_esp|safe}}
+                {% else %}
+                        {{news.descrizione|safe}}
+                {% endif %}
+                
+            </p>
+            <br>
+            {% if news.link %}
+            <p>
+                <a href="{{news.link}}" target="_Blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i> Link
+                </a>
+            </p>
+            <br>
+            {% endif %}
+            {% if news.allegato %}
+            <p>
+                <a href="/media/{{news.allegato}}" target="_Blank">
+                    <i class="fa fa-file-text" aria-hidden="true"></i> Vedi allegato
+                </a>
+            </p>
+            {% endif %}
+             <h5><br><br>
+                Share:
+                <span class='st_facebook' displayText=''></span>
+                <span class='st_twitter' displayText=''></span>
+                <span class='st_pinterest' displayText=''></span>
+                <span class='st_whatsapp' displayText=''></span>
+                <span class='st_email' displayText=''></span>
+            </h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

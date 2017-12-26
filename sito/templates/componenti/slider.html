@@ -1,0 +1,32 @@
+<section id="slider">
+	<div class="tp-banner-container">
+          <div class="tp-banner" >
+            <ul>
+            {% for slider in slider_list %}
+              <!-- SLIDE  -->
+              {% if slider.slider_home %}
+              <li data-transition="fade" data-slotamount="5" data-masterspeed="700" >
+                <!-- MAIN IMAGE -->
+                <img src="/media/{{slider.slider_home}}" alt="gallery 1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+              </li>
+              {% endif %}
+			       {% endfor %}
+            </ul>
+
+          </div>
+      </div>
+              <script type="text/javascript">
+              var revapi;
+              jQuery(document).ready(function() {
+                   revapi = jQuery('.tp-banner').revolution(
+                  {
+                    delay:4000,
+                    startwidth:1170,
+                    startheight:664,
+                    hideThumbs:10,
+                    fullWidth:"on",
+                    forceFullWidth:"off"
+                  });
+              }); //ready
+            </script>
+</section>

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block metatag %}
+    <meta property="og:title" content="SABRIART BIJOUX | {{post.titolo}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.sabriartbijoux.it/detail/{{post.id}}" />
+    <meta property="og:image" content="http://www.sabriartbijoux.it/media/{{post.image}}"/>
+    <meta property="og:description" content="{{post.body|safe}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="dettaglio">
+    <div class="container">
+        <div class="col-xs-12 col-sm-6">
+            {% if post.album %}
+            <div class="flexslider">
+              <ul class="slides">
+                {% for filer in filer_list %}
+                <li>
+                  <img src="/media/{{ filer.file }}" class="img-responsive"/>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% else %}
+            <img src="/media/{{post.image}}" class="img-responsive">
+            {% endif %}
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+            <h2>
+                {% if session_language = 'eng' %}
+                    {{post.titolo_uk}}
+                {% elif session_language = 'fra' %}
+                    {{post.titolo_fra}}
+                {% elif session_language = 'esp' %}
+                    {{post.titolo_esp}}
+                {% else %}
+                    {{post.titolo}}
+                {% endif %}
+            </h2>
+
+            <h4>
+                {% if session_language = 'eng' %}
+                    Category: {{post.categoria.titolo_uk}}
+                {% elif session_language = 'fra' %}
+                    Catégorie: {{post.categoria.titolo_fra}}
+                {% elif session_language = 'esp' %}
+                    Categoría: {{post.categoria.titolo_esp}}
+                {% else %}
+                    Categoria: {{post.categoria.titolo}}
+                {% endif %}
+            </h4>
+
+            <hr>
+            <p>
+                {% if session_language = 'eng' %}
+                    {{post.body_uk|safe}}
+                {% elif session_language = 'fra' %}
+                    {{post.body_fra|safe}}
+                {% elif session_language = 'esp' %}
+                    {{post.body_esp|safe}}
+                {% else %}
+                    {{post.body|safe}}
+                {% endif %}
+            </p>
+
+            <h5><br><br>
+                Share:
+                <span class='st_facebook' displayText=''></span>
+                <span class='st_twitter' displayText=''></span>
+                <span class='st_pinterest' displayText=''></span>
+                <span class='st_whatsapp' displayText=''></span>
+                <span class='st_email' displayText=''></span>
+            </h5>
+
+        </div>
+
+    </div><!-- container -->
+
+    <script type="text/javascript">
+        // Can also be used with $(document).ready()
+        $(window).load(function() {
+          $('.flexslider').flexslider({
+            animation: "slide"
+          });
+        });
+    </script>
+
+</section>
+
+
+{% endblock %}
