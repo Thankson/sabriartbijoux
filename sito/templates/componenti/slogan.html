@@ -1,11 +1,11 @@
 	<section id="slogan">
 		<div class="container">
 			<h1>
-				{% if session_language = 'eng' %}
+				{% if session_language == 'eng' %}
 						{{slogan.body_uk|safe}}
-					{% elif session_language = 'fra' %}
+					{% elif session_language == 'fra' %}
 						{{slogan.body_fra|safe}}
-					{% elif session_language = 'esp' %}
+					{% elif session_language == 'esp' %}
 						{{slogan.body_esp|safe}}
 					{% else %}
 						{{slogan.body|safe}}

@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 
-from django.conf.urls import include, url, patterns
+from django.conf.urls import include, url#, patterns
 from django.contrib import admin
 from sito import views
 from django.conf import settings
@@ -35,9 +35,10 @@ urlpatterns = [
 
 ]
 
-if settings.DEBUG:  
-        urlpatterns += patterns('',  
-                                #REMOVE IT in production phase  
-                                (r'^media/(?P<path>.*)$', 'django.views.static.serve',  
-                                {'document_root': settings.MEDIA_ROOT})
-          )
+# if settings.DEBUG:
+#         urlpatterns += patterns('',
+#                                 #REMOVE IT in production phase
+#                                 (r'^media/(?P<path>.*)$', 'django.views.static.serve',
+#                                 {'document_root': settings.MEDIA_ROOT})
+#           )
+

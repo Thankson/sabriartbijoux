@@ -25,7 +25,7 @@ SECRET_KEY = '-6q&kag3zc-)lps8%=tnqn5!rpri1+j3y#-q7#+@w1ltl6v9!b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -85,8 +85,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sabriart',
-        'USER': 'root',
-        'PASSWORD': 'alnitek',
+        'USER': 'sabriart',
+        'PASSWORD': 'sabriart',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -156,6 +156,7 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters',
 )
 
+# https://pypi.python.org/pypi/easy-thumbnails      pip install easy-thumbnails
 from easy_thumbnails.conf import Settings as thumbnail_settings
 THUMBNAIL_PROCESSORS = (
     'image_cropping.thumbnail_processors.crop_corners',

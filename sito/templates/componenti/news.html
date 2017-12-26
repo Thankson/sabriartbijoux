@@ -13,11 +13,11 @@
 					</a>
 				</a>
 				<h3>
-          {% if session_language = 'eng' %}
+          {% if session_language == 'eng' %}
               {{news.titolo_uk|safe}}
-          {% elif session_language = 'fra' %}
+          {% elif session_language == 'fra' %}
               {{news.titolo_fra|safe}}
-          {% elif session_language = 'esp' %}
+          {% elif session_language == 'esp' %}
               {{news.titolo_esp|safe}}
           {% else %}
               {{news.titolo|safe}}
@@ -29,11 +29,11 @@
             		{% if news.fine %}Al: {{news.fine|date:"SHORT_DATE_FORMAT"}}{% else %}&nbsp;{% endif %}
         </h5>
 				<p>
-          {% if session_language = 'eng' %}
+          {% if session_language == 'eng' %}
               {{news.descrizione_uk|safe|truncatechars:140}}
-          {% elif session_language = 'fra' %}
+          {% elif session_language == 'fra' %}
               {{news.descrizione_fra|safe|truncatechars:140}}
-          {% elif session_language = 'esp' %}
+          {% elif session_language == 'esp' %}
               {{news.descrizione_esp|safe|truncatechars:140}}
           {% else %}
               {{news.descrizione|safe|truncatechars:140}}
@@ -71,11 +71,11 @@
       	<div class="col-xs-12 col-sm-8">
       		<br>
         	<p>
-            {% if session_language = 'eng' %}
+            {% if session_language == 'eng' %}
                         {{news.descrizione_uk|safe}}
-            {% elif session_language = 'fra' %}
+            {% elif session_language == 'fra' %}
                         {{news.descrizione_fra|safe}}
-            {% elif session_language = 'esp' %}
+            {% elif session_language == 'esp' %}
                         {{news.descrizione_esp|safe}}
             {% else %}
                         {{news.descrizione|safe}}

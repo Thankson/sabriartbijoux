@@ -18,17 +18,19 @@ def HomePage(request):
     slider_list = Post.objects.all().order_by('pub_date')
     news_list = News.objects.all().order_by('-pub_date')[:4]
     box_list = Box.objects.all()
-    gioielli = Page.objects.get(id=1)
-    biografia = Page.objects.get(id=2)
-    slogan = Page.objects.get(id=3)
+    # gioielli = Page.objects.get(id=1)
+    # biografia = Page.objects.get(id=2)
+    # slogan = Page.objects.get(id=3)
     context = {'post_list':post_list,
                 'slider_list':slider_list,
                 'news_list':news_list,
-                'box_list':box_list,
-                'gioielli':gioielli,
-                'biografia':biografia,
-                'slogan':slogan}
-    return render_to_response('index.html', context, context_instance=RequestContext(request))
+                'box_list':box_list
+                # 'gioielli':gioielli,
+                # 'biografia':biografia,
+                # 'slogan':slogan
+    }
+    #return render_to_response('index.html', context, context_instance=RequestContext(request))
+    return render(request, 'index.html', locals())
 
 
 

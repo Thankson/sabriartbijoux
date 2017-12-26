@@ -3,22 +3,22 @@
 			<div class="col-xs-12 col-sm-6 col-mg-8 col-lg-8">
 				<br><br>
 				<span class="spanband" style="margin-top:-20px;">
-				{% if session_language = 'eng' %}
+				{% if session_language == 'eng' %}
 					{{gioielli.titolo_uk}}
-				{% elif session_language = 'fra' %}
+				{% elif session_language == 'fra' %}
 					{{gioielli.titolo_fra}}
-				{% elif session_language = 'esp' %}
+				{% elif session_language == 'esp' %}
 					{{gioielli.titolo_esp}}
 				{% else %}
 					{{gioielli.titolo}}
 				{% endif %}
 				</span><br><br>
 				<p style="float: left">
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
 						{{gioielli.body_uk|safe}}
-					{% elif session_language = 'fra' %}
+					{% elif session_language == 'fra' %}
 						{{gioielli.body_fra|safe}}
-					{% elif session_language = 'esp' %}
+					{% elif session_language == 'esp' %}
 						{{gioielli.body_esp|safe}}
 					{% else %}
 						{{gioielli.body|safe}}

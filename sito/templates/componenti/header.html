@@ -27,21 +27,21 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        {% if session_language = 'eng' %}
+        {% if session_language == 'eng' %}
         <li><a href="/#">HOME</a></li>
         <li><a href="/#designer">ABOUT</a></li>
         <li><a href="/product">PORTFOLIO</a></li>
         <li><a href="{% url 'news' %}">EVENTS</a></li>
         <li><a href="{% url 'shop' %}">SHOP</a></li>
         <li><a href="{% url 'contact' %}">CONTACTS</a></li>
-        {% elif session_language = 'fra' %}
+        {% elif session_language == 'fra' %}
         <li><a href="/#">HOME</a></li>
         <li><a href="/#designer">ABOUT</a></li>
         <li><a href="/product">PORTFOLIO</a></li>
         <li><a href="{% url 'news' %}">ÉVÉNEMENTS</a></li>
         <li><a href="{% url 'shop' %}">SHOP</a></li>
         <li><a href="{% url 'contact' %}">CONTACTS</a></li>
-        {% elif session_language = 'esp' %}
+        {% elif session_language == 'esp' %}
         <li><a href="/#">HOME</a></li>
         <li><a href="/#designer">ABOUT</a></li>
         <li><a href="/product">PORTFOLIO</a></li>

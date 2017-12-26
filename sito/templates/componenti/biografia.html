@@ -1,27 +1,28 @@
 <section id="designer" style="position:relative; z-index: 998">
 		<div class="container">
 			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">{% load cropping %}
+                {{ cropped_thumbnail }}
 				<img src="{% cropped_thumbnail biografia "croplibero" %}" class="img-responsive">
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 				<br><br>
 				<span class="spanband">
-				{% if session_language = 'eng' %}
+				{% if session_language == 'eng' %}
 					{{biografia.titolo_uk}}
-				{% elif session_language = 'fra' %}
+				{% elif session_language == 'fra' %}
 					{{biografia.titolo_fra}}
-				{% elif session_language = 'esp' %}
+				{% elif session_language == 'esp' %}
 					{{biografia.titolo_esp}}
 				{% else %}
 					{{biografia.titolo}}
 				{% endif %}
 				</span>
 				<p style="float: left">
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
 						{{biografia.body_uk|safe}}
-					{% elif session_language = 'fra' %}
+					{% elif session_language == 'fra' %}
 						{{biografia.body_fra|safe}}
-					{% elif session_language = 'esp' %}
+					{% elif session_language == 'esp' %}
 						{{biografia.body_esp|safe}}
 					{% else %}
 						{{biografia.body|safe}}

@@ -7,11 +7,11 @@
 					<div class="col-xs-12 quadro">
 						<i class="{{box.icona}}"></i>
 						<h3>
-							{% if session_language = 'eng' %}
+							{% if session_language == 'eng' %}
 								{{box.titolo_uk}}
-							{% elif session_language = 'fra' %}
+							{% elif session_language == 'fra' %}
 								{{box.titolo_fra}}
-							{% elif session_language = 'esp' %}
+							{% elif session_language == 'esp' %}
 								{{box.titolo_esp}}
 							{% else %}
 								{{box.titolo}}
@@ -19,11 +19,11 @@
 						</h3>
 						<hr>
 						<p>
-							{% if session_language = 'eng' %}
+							{% if session_language == 'eng' %}
 								{{box.descrizione_uk|safe|truncatechars:140}}
-							{% elif session_language = 'fra' %}
+							{% elif session_language == 'fra' %}
 								{{box.descrizione_fra|safe|truncatechars:140}}
-							{% elif session_language = 'esp' %}
+							{% elif session_language == 'esp' %}
 								{{box.descrizione_esp|safe|truncatechars:140}}
 							{% else %}
 								{{box.descrizione|safe|truncatechars:140}}
