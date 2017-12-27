@@ -21,7 +21,6 @@ def HomePage(request):
     gioielli = Page.objects.get(id=1)
     biografia = Page.objects.get(id=2)
     slogan = Page.objects.get(id=6)
-    print slogan
     context = {'post_list':post_list,
                 'slider_list':slider_list,
                 'news_list':news_list,
@@ -30,7 +29,6 @@ def HomePage(request):
                 'biografia':biografia,
                 'slogan':slogan
     }
-    print context['slogan']
     # return render_to_response('index.html', context, context_instance=RequestContext(request))
     return render(request, 'index.html', locals())
 

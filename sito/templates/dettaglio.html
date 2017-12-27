@@ -30,11 +30,11 @@
 
         <div class="col-xs-12 col-sm-6">
             <h2>
-                {% if session_language = 'eng' %}
+                {% if session_language == 'eng' %}
                     {{post.titolo_uk}}
-                {% elif session_language = 'fra' %}
+                {% elif session_language == 'fra' %}
                     {{post.titolo_fra}}
-                {% elif session_language = 'esp' %}
+                {% elif session_language == 'esp' %}
                     {{post.titolo_esp}}
                 {% else %}
                     {{post.titolo}}
@@ -42,11 +42,11 @@
             </h2>
 
             <h4>
-                {% if session_language = 'eng' %}
+                {% if session_language == 'eng' %}
                     Category: {{post.categoria.titolo_uk}}
-                {% elif session_language = 'fra' %}
+                {% elif session_language == 'fra' %}
                     Catégorie: {{post.categoria.titolo_fra}}
-                {% elif session_language = 'esp' %}
+                {% elif session_language == 'esp' %}
                     Categoría: {{post.categoria.titolo_esp}}
                 {% else %}
                     Categoria: {{post.categoria.titolo}}
@@ -55,11 +55,11 @@
 
             <hr>
             <p>
-                {% if session_language = 'eng' %}
+                {% if session_language == 'eng' %}
                     {{post.body_uk|safe}}
-                {% elif session_language = 'fra' %}
+                {% elif session_language == 'fra' %}
                     {{post.body_fra|safe}}
-                {% elif session_language = 'esp' %}
+                {% elif session_language == 'esp' %}
                     {{post.body_esp|safe}}
                 {% else %}
                     {{post.body|safe}}
