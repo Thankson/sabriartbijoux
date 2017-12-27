@@ -40,11 +40,11 @@
 <div id="contatti" class="container">
 	<div class="col-xs-12">
 		<!--h2 class="text-center">
-			{% if session_language = 'eng' %}
+			{% if session_language == 'eng' %}
             	SHOP 
-            {% elif session_language = 'fra' %}
+            {% elif session_language == 'fra' %}
                 SHOP 
-            {% elif session_language = 'esp' %}
+            {% elif session_language == 'esp' %}
             	SHOP
             {% else %}
            		SHOP
@@ -56,11 +56,11 @@
 
 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
 				<h4>
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
                         Purchases online 
-                    {% elif session_language = 'fra' %}
+                    {% elif session_language == 'fra' %}
                         Achats en ligne 
-                    {% elif session_language = 'esp' %}
+                    {% elif session_language == 'esp' %}
                         Adquisiciones online
                     {% else %}
                         Acquisti online
@@ -68,13 +68,13 @@
 				</h4>
 				
 				<p>
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
 						If you are interested to purchase a Sabriart Bijoux and you want further information on the collections, on the costs and on the consignments, or for any other information it fills out here the form to side, or send me a direct email.
                     
-                    {% elif session_language = 'fra' %}
+                    {% elif session_language == 'fra' %}
 						Si tu es intéressé à acheter un Sabriart Bijoux et tu veux des informations sur les collections, sur les coûts et sur les envois ou pour n'importe quel autre renseignement remplit ici le formulaire au côté, ou envoie-moi une email direct.
                     
-                    {% elif session_language = 'esp' %}
+                    {% elif session_language == 'esp' %}
 						Si eres interesado en adquirir un Sabriart Bijoux y quieres mayores informaciones sobre las colecciones, sobre los costes y sobre los envíos, o por cualquiera otra información rellena aquí el impreso a lado, o bien me mandas un email directo. 
                     
                     {% else %}
@@ -87,11 +87,11 @@
 
 
 				<h4>
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
                         You purchase direct  
-                    {% elif session_language = 'fra' %}
+                    {% elif session_language == 'fra' %}
                         Tu achètes direct 
-                    {% elif session_language = 'esp' %}
+                    {% elif session_language == 'esp' %}
                         Adquieres directos
                     {% else %}
                         Acquisti diretti
@@ -99,15 +99,15 @@
 				</h4>
 
 				<p>
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
 						If you want to directly purchase a Sabriart Bijoux you can come to my stand in mine "mobile Tappe": (find them in the section <a href="{% url 'news-filter' 3 %}">"Events"</a> or follow the page Facebook).
 						If you have some difficulty to reach me, contact me and we can also find an alternative way to meet us.
                     
-                    {% elif session_language = 'fra' %}
+                    {% elif session_language == 'fra' %}
 						Si tu veux acheter un Sabriart Bijoux directement tu peux venir à mon stand dans mes "Étapes mobiles": (tu leur trouves dans la section <a href="{% url 'news-filter' 3 %}">"Événements"</a>, òu suivre la page Facebook).
 						Si il tu as des difficultès à me rejouindre,  contacte-moi et nous pouvons trouver une alternative de rencontre aussi.
                     
-                    {% elif session_language = 'esp' %}
+                    {% elif session_language == 'esp' %}
 						Si quieres adquirir directamente un Sabriart Bijoux puedes venir a mi caseta en mis "Etapas móviles": (las encuentras en la sección <a href="{% url 'news-filter' 3 %}">"Eventos"</a> o bien puedes seguir la página Facebook).<br>
 						¿No te es posible alcanzarme? contáctame y también podemos encontrar una alternativa de cita.
                     
@@ -137,13 +137,13 @@
 				</p>
 
 				<p>
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
                         <span style="font-size: 16px; font-weight:800;">Where you find me</span><br>
                         Milan, ITALY
-                    {% elif session_language = 'fra' %}
+                    {% elif session_language == 'fra' %}
                         <span style="font-size: 16px; font-weight:800;">Où tu me trouves</span><br>
                         Milan, ITALIE
-                    {% elif session_language = 'esp' %}
+                    {% elif session_language == 'esp' %}
                         <span style="font-size: 16px; font-weight:800;">Dónde me encuentras</span><vr>
                         Milán, ITALIA
                     {% else %}
@@ -157,11 +157,11 @@
 
 
 				<h4>
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
                         Shops  
-                    {% elif session_language = 'fra' %}
+                    {% elif session_language == 'fra' %}
                         Magasin 
-                    {% elif session_language = 'esp' %}
+                    {% elif session_language == 'esp' %}
                         Tienda
                     {% else %}
                         Negozi
@@ -183,13 +183,13 @@
 					<br>
 					<strong>
 					<span style="font-weight: bold">
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
                         f you are interested to distribute the collection "Sabriart Bijoux", send me an email of the presentation of your shop to <a href="mailtoinfo@sabriartbijoux.it">info@sabriartbijoux.it</a>, I will recontact you personally.
                     
-                    {% elif session_language = 'fra' %}
+                    {% elif session_language == 'fra' %}
                         Si vous êtes intéressès a distribuire les créations de la collection "Sabriart Bijoux". Envoyez moi une email de prèsentation de votre boutique à <a href="mailtoinfo@sabriartbijoux.it">info@sabriartbijoux.it</a>, je vous rèpondrai personnellement. 
                     
-                    {% elif session_language = 'esp' %}
+                    {% elif session_language == 'esp' %}
                         ¿Eres interesado en Sabriart Bijoux distribuir los productos? Manda un email de presentación de tu tienda a <a href="mailtoinfo@sabriartbijoux.it">info@sabriartbijoux.it</a> vendrás personalmente ricontattato.
                     
                     {% else %}

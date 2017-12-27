@@ -27,10 +27,11 @@ def HomePage(request):
                 'news_list':news_list,
                 'box_list':box_list,
                 'gioielli':gioielli,
-                'biografia':biografia
-                #'slogan':slogan
+                'biografia':biografia,
+                'slogan':slogan
     }
-    #return render_to_response('index.html', context, context_instance=RequestContext(request))
+    print context['slogan']
+    # return render_to_response('index.html', context, context_instance=RequestContext(request))
     return render(request, 'index.html', locals())
 
 
@@ -40,7 +41,8 @@ def ProductView(request):
     categorie_list = Categorie.objects.all()
     context = {'post_list':post_list,
                 'categorie_list':categorie_list}
-    return render_to_response('prodotti.html', context, context_instance=RequestContext(request))
+    # return render_to_response('prodotti.html', context, context_instance=RequestContext(request))
+    return render(request, 'prodotti.html', locals())
 
 
 def ProductFilterView(request, post_id):
@@ -48,7 +50,8 @@ def ProductFilterView(request, post_id):
     categorie_list = Categorie.objects.all()
     context = {'post_list':post_list,
                 'categorie_list':categorie_list}
-    return render_to_response('prodotti.html', context, context_instance=RequestContext(request))
+    # return render_to_response('prodotti.html', context, context_instance=RequestContext(request))
+    return render(request, 'prodotti.html', locals())
 
 
 def DetailView(request, post_id):
@@ -56,7 +59,8 @@ def DetailView(request, post_id):
     filer_list = Image.objects.filter(folder_id = post.album)
     context = {'post': post,
     			'filer_list':filer_list}
-    return render_to_response('dettaglio.html', context, context_instance=RequestContext(request))
+    #return render_to_response('dettaglio.html', context, context_instance=RequestContext(request))
+    return render(request, 'dettaglio.html', locals())
 
 
 def categorie(request):
@@ -70,7 +74,8 @@ def news(request):
     news_list = News.objects.all().order_by('-pub_date')
     context = {'tipologie_list':tipologie_list,
                 'news_list':news_list}
-    return render_to_response('news.html', context, context_instance=RequestContext(request))
+    #return render_to_response('news.html', context, context_instance=RequestContext(request))
+    return render(request, 'news.html', locals())
 
 def newsFilter(request, post_id):
     tipologie_list = TipologiaEventi.objects.all()
@@ -79,7 +84,8 @@ def newsFilter(request, post_id):
     context = {'tipologie_list':tipologie_list,
                 'news_list':news_list,
                 'categoria':categoria}
-    return render_to_response('news.html', context, context_instance=RequestContext(request))
+    #return render_to_response('news.html', context, context_instance=RequestContext(request))
+    return render(request, 'news.html', locals())
 
 
 ### EMAIL - CONTACT FORM
@@ -103,7 +109,8 @@ def contact(request):
         form = ContactForm() # An unbound form
 
     #return render_to_response('contact.html', {'form': form,})
-    return render_to_response('contact.html', context_instance=RequestContext(request))
+    # return render_to_response('contact.html', context_instance=RequestContext(request))
+    return render(request, 'contact.html', locals())
 
 
 
@@ -128,13 +135,15 @@ def shop(request):
         form = ContactForm() # An unbound form
 
     #return render_to_response('contact.html', {'form': form,})
-    return render_to_response('shop.html', context_instance=RequestContext(request))
+    # return render_to_response('shop.html', context_instance=RequestContext(request))
+    return render(request, 'shop.html', locals())
 
 
 
 
 def success(request):
-    return render_to_response('success.html', context_instance=RequestContext(request))
+    # return render_to_response('success.html', context_instance=RequestContext(request))
+    return render(request, 'success.html', locals())
 
 
 ### setting language session

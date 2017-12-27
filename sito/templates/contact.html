@@ -40,11 +40,11 @@
 <div id="contatti" class="container">
 	<div class="col-xs-12">
 		<h2 class="text-center">
-			{% if session_language = 'eng' %}
+			{% if session_language == 'eng' %}
             	Contacts 
-            {% elif session_language = 'fra' %}
+            {% elif session_language == 'fra' %}
                 Contacts 
-            {% elif session_language = 'esp' %}
+            {% elif session_language == 'esp' %}
             	Contactos
             {% else %}
            		Contatti
@@ -105,11 +105,11 @@
 
 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 				<h4>
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
                         Contacts
-                    {% elif session_language = 'fra' %}
+                    {% elif session_language == 'fra' %}
                         Contacts
-                    {% elif session_language = 'esp' %}
+                    {% elif session_language == 'esp' %}
                         Contactos
                     {% else %}
                         Contatti
@@ -117,13 +117,13 @@
 				</h4>
 				
 				<p>
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
                         For any information fills out here the form to side, or send me a direct email.
  
-                    {% elif session_language = 'fra' %}
+                    {% elif session_language == 'fra' %}
                         Pour n'importe quel renseignement remplit ici le formulaire au côté, ou envoie-moi une email direct. 
 
-                    {% elif session_language = 'esp' %}
+                    {% elif session_language == 'esp' %}
                         Por cualquiera información rellena aquí el impreso a lado, o bien me mandas un email directo.
 
                     {% else %}
@@ -144,13 +144,13 @@
 				</p>
 
 				<p>
-					{% if session_language = 'eng' %}
+					{% if session_language == 'eng' %}
                         <span style="font-size: 16px; font-weight:800;">Where you find me</span><br>
                         Milan, ITALY
-                    {% elif session_language = 'fra' %}
+                    {% elif session_language == 'fra' %}
                         <span style="font-size: 16px; font-weight:800;">Où tu me trouves</span><br>
                         Milan, ITALIE
-                    {% elif session_language = 'esp' %}
+                    {% elif session_language == 'esp' %}
                         <span style="font-size: 16px; font-weight:800;">Dónde me encuentras</span><vr>
                         Milán, ITALIA
                     {% else %}
